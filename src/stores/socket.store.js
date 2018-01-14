@@ -12,7 +12,12 @@ const socketStore = new Vuex.Store({
   },
   mutations: {
     connect (state) {
-      state.socket = io('http://localhost:3000')
+      state.socket = io(process.env.HOST)
+
+      state.socket.on('all-questions-sent', function (questions) {
+        questionStore.commit('clearAll')
+        questions.forEach(question => questionStore.commit('addQuestion', question))
+      })
 
       state.socket.on('student-question-published', function (question) {
         questionStore.commit('addQuestion', question)

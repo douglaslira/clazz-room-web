@@ -19,6 +19,9 @@ const questionStore = new Vuex.Store({
           state.questions.splice(index, 1)
         }
       }
+    },
+    clearAll (state) {
+      state.questions = []
     }
   }
 })
