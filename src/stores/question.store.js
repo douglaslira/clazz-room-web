@@ -23,6 +23,11 @@ const questionStore = new Vuex.Store({
     clearAll (state) {
       state.questions = []
     }
+  },
+  getters: {
+    questionCount: state => {
+      return state.questions.length
+    }
   }
 })
 
