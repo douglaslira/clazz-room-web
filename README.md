@@ -1,6 +1,7 @@
 # clazz-room-web
-
-> colaborative class room web front end
+Colaborative class room web front end using vue.js and socket.io  
+This is the front end implementation for [clazz-room](https://github.com/randilfernando/clazz-room)  
+Goto [here](https://github.com/randilfernando/clazz-room/blob/master/README.md) to read about how to setup backend and run project.
 
 ## Build Setup
 
