@@ -3,18 +3,17 @@
     <div class="row">
       <div class="col">
         <h3 class="text-secondary">Add new question</h3>
-        <form>
+        <form @submit.prevent="addQuestion">
           <div class="form-group">
             <label for="question-title">Title</label>
             <input type="text" class="form-control" id="question-title" name="title" placeholder="Enter title"
-              v-model="question.title" v-validate="'required'">
-            <span v-show="errors.has('title') || submited" class="error" >* {{'title field is required'}}</span>
+              v-model="question.title" required>
           </div>
           <div class="form-group">
             <label for="question-description">Description</label>
             <textarea class="form-control" id="question-description" v-model="question.description" rows="4"></textarea>
           </div>
-          <button type="button" class="btn btn-dark btn-block btn-lg" v-on:click="addQuestion">
+          <button class="btn btn-dark btn-block btn-lg">
             Publish
           </button>
         </form>
@@ -36,14 +35,12 @@ export default {
   },
   methods: {
     addQuestion: function () {
-      this.submited = true
-      if (this.errors.has('title')) {
-        return
-      }
-      socketStore.commit('newStudentQuestion', this.question)
-      this.question = {
-        title: '',
-        description: ''
+      if (!this.errors.has('title')) {
+        socketStore.commit('newStudentQuestion', this.question)
+        this.question = {
+          title: '',
+          description: ''
+        }
       }
     }
   }
