@@ -3,8 +3,13 @@ Colaborative class room web front end using vue.js and socket.io
 This is the front end implementation for [clazz-room](https://github.com/randilfernando/clazz-room)  
 Goto [here](https://github.com/randilfernando/clazz-room/blob/master/README.md) to read about how to setup backend and run project.
 
-## Build Setup
-
+# How to run
+Install [node.js](https://nodejs.org/en/)  
+Clone repository
+```
+git clone https://github.com/randilfernando/clazz-room-web.git
+```
+Build and run
 ``` bash
 # install dependencies
 npm install
@@ -18,5 +23,4 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Goto [http://localhost:8080](http:localhost:8080) using your favourite browser.
